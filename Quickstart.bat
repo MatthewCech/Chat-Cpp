@@ -1,6 +1,7 @@
 @echo off
 rem This is just a one-stop file to run the vs2015 build script. Cleans then builds it again.
 rem I suspect this will not work with any of the files in use. It should announce that when cleaning.
+rem You can tweak the corresponding batch file to update it to vs2017, and it should be just fine. 2015 projects update to 2017 fine, genearlly.
 
 echo -- [ CLEANING ]--
 cd Build
