@@ -6,10 +6,11 @@
 #include "Net/SocketAddressFactory.hpp"
 #include "Input.hpp"
 
-// Defines
-#define BUFFER_SIZE 1400
+// Defines section
+#define BUFFER_SIZE 1400 // Defines the maxiumum buffer size we're going to be using.
 
 
+// Runs the client, taking a pointer to the address of the server. This is formatted as IP:Port.
 void RunClient(const char * serverAddress)
 {
   DEBUG_PRINT("Starting TCP client...");
@@ -64,6 +65,8 @@ void RunClient(const char * serverAddress)
 }
 
 
+// Starts the server. The server doesn't need an IP supplied to it, rather it is whatever you put it on. 
+// NOTE THAT I USE PORT 27015 - THE CLIENT WILL HAVE TO SPECIFY THIS!
 void RunServer()
 {
   DEBUG_PRINT("Starting TCP server...");
@@ -164,7 +167,7 @@ int main(int argc, char const *argv[])
   if (argc < 2 || argc > 3)
   {
     std::cout << "Incorrect arguments! Please pass 1 for server or 2 for client! <application name> <1 | 2> <if 2: IP:PORT>\n";
-    std::cout << "For client, please specify the server address with port number as the third argument!";
+    std::cout << "For client, please specify the server address with port number (27015) as the third argument!";
     return -1;
   }
 
